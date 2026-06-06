@@ -1,0 +1,56 @@
+/* =========================
+BUTTONS SECTION
+========================= */
+
+#buttonsSection {
+    display: none;
+
+    text-align: center;
+
+    padding: 40px;
+
+    position: relative;
+    z-index: 50;
+}
+
+/* =========================
+MAGIC BUTTON
+========================= */
+
+.magic-btn {
+    margin: 15px;
+    padding: 15px 30px;
+
+    border: none;
+    border-radius: 40px;
+
+    cursor: pointer;
+
+    background: linear-gradient(45deg, #ff77c9, #9f7cff);
+
+    color: white;
+    font-size: 1rem;
+
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    will-change: transform;
+}
+
+/* =========================
+HOVER EFFECT
+========================= */
+
+.magic-btn:hover {
+    transform: translateY(-5px) scale(1.03);
+
+    box-shadow:
+        0 0 20px #ff99dd,
+        0 0 50px #c8a8ff;
+}
+
+/* =========================
+ACTIVE / CLICK FEEDBACK (optional but useful)
+========================= */
+
+.magic-btn:active {
+    transform: translateY(-2px) scale(0.98);
+}

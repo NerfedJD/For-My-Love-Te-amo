@@ -1,0 +1,171 @@
+/* =========================
+FLOWER SCENE
+========================= */
+
+#flowerScene {
+
+    display: none;
+
+    min-height: 100vh;
+
+    justify-content: center;
+    align-items: flex-end;
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding-bottom: 40px;
+
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+/* CENTER MODE */
+
+#flowerScene.center {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* WRAPPER */
+
+.flower-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+/* SVG */
+
+.real-flower {
+    width: 320px;
+    overflow: visible;
+
+    filter: drop-shadow(0 0 25px rgba(255,120,180,.25));
+
+    animation: flowerFloat 5s ease-in-out infinite;
+}
+
+/* =========================
+STEM
+========================= */
+
+.stem {
+
+    fill: none;
+    stroke: url(#stemGradient);
+    stroke-width: 10;
+    stroke-linecap: round;
+
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+}
+
+/* ACTIVE STEM */
+.stem.grow {
+    animation: stemGrow 4s ease forwards;
+}
+
+/* =========================
+LEAVES
+========================= */
+
+.leaf {
+    fill: #45d86f;
+
+    opacity: 0;
+
+    transform-origin: center;
+
+    filter: drop-shadow(0 0 10px rgba(100,255,140,.3));
+}
+
+.leaf.grow {
+    animation: leafGrow 2s ease forwards;
+}
+
+/* LEFT / RIGHT timing handled in JS OR SVG order */
+
+/* =========================
+FLOWER HEAD
+========================= */
+
+.flower-head {
+
+    opacity: 0;
+
+    transform: translateY(100px) scale(.2) rotate(-25deg);
+
+    transform-origin: center;
+}
+
+.flower-head.bloom {
+    animation: flowerBloom 4s ease forwards;
+}
+
+/* =========================
+PETALS
+========================= */
+
+.petal {
+    fill: url(#petalGradient);
+    stroke: #ff9dc6;
+    stroke-width: 2;
+
+    filter: drop-shadow(0 0 15px rgba(255,120,180,.45));
+}
+
+/* =========================
+CENTER
+========================= */
+
+.flower-center {
+    fill: #ffe27a;
+    filter: drop-shadow(0 0 15px gold);
+}
+
+/* =========================
+ANIMATIONS
+========================= */
+
+@keyframes stemGrow {
+    to { stroke-dashoffset: 0; }
+}
+
+@keyframes leafGrow {
+    from {
+        opacity: 0;
+        transform: scale(0) rotate(-25deg);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+@keyframes flowerBloom {
+    0% {
+        opacity: 0;
+        transform: translateY(100px) scale(.2) rotate(-25deg);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(-20px) scale(1.08) rotate(5deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1) rotate(0deg);
+    }
+}
+
+@keyframes flowerFloat {
+    50% {
+        transform: translateY(-10px) rotate(1deg);
+    }
+}

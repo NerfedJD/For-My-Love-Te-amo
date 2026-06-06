@@ -1,0 +1,76 @@
+/* =========================
+LETTERS SECTION
+========================= */
+
+#lettersSection {
+    display: none;
+
+    min-height: 70vh;
+
+    padding: 50px 20px;
+
+    animation: fadeIn 1.5s ease;
+}
+
+/* =========================
+LETTER SLIDER CONTAINER
+========================= */
+
+.letter-slider {
+    position: relative;
+
+    width: 100%;
+    max-width: 700px;
+
+    height: 300px;
+
+    margin: auto;
+}
+
+/* =========================
+LETTER CARD
+========================= */
+
+.letter-card {
+    position: absolute;
+    inset: 0;
+
+    padding: 40px;
+
+    border-radius: 25px;
+
+    background: rgba(255,255,255,0.08);
+
+    backdrop-filter: blur(10px);
+
+    text-align: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+
+    transform: scale(0.9) translateY(20px);
+
+    transition: opacity 0.8s ease, transform 0.8s ease;
+
+    will-change: transform, opacity;
+}
+
+/* TEXT INSIDE CARD */
+
+.letter-card p {
+    font-size: 1.2rem;
+    line-height: 2;
+}
+
+/* =========================
+ACTIVE LETTER
+========================= */
+
+.letter-card.active {
+    opacity: 1;
+
+    transform: scale(1) translateY(0);
+}

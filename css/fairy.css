@@ -1,0 +1,422 @@
+/* =========================
+FAIRY CONTAINER
+========================= */
+
+#fairyContainer {
+    display: none;
+
+    position: fixed;
+    left: -200px;
+    top: 20%;
+
+    opacity: 0;
+
+    transform: translate(-50%, -50%);
+
+    transition: left 1.5s ease, opacity 1s ease;
+
+    z-index: 1000;
+}
+
+/* =========================
+FAIRY CORE
+========================= */
+
+#fairy {
+    width: 90px;
+    height: 90px;
+
+    position: relative;
+    cursor: pointer;
+
+    transition: transform 0.3s ease;
+}
+
+/* =========================
+BODY
+========================= */
+
+.fairy-body {
+    width: 16px;
+    height: 40px;
+
+    background: radial-gradient(circle at top, #fff0fb, #fff8d6);
+
+    border-radius: 50px;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -30%);
+
+    z-index: 5;
+
+    box-shadow:
+        0 0 20px #fff4b0,
+        0 0 40px #fff4b0,
+        0 0 80px #fff4b0;
+}
+
+#fairy:hover .fairy-body {
+    box-shadow:
+        0 0 15px #ffb3e6,
+        0 0 30px #ffb3e6,
+        0 0 50px #ffb3e6;
+
+    transform: translate(-50%, -30%) scale(1.05);
+}
+
+/* =========================
+WINGS BASE
+========================= */
+
+.wing {
+    position: absolute;
+    top: 8px;
+}
+
+/* =========================
+LEFT WING
+========================= */
+
+.wing-left {
+    left: 50%;
+    top: 12px;
+    transform: translateX(-90%);
+}
+
+.wing-left .wing-top {
+    width: 55px;
+    height: 40px;
+
+    background: radial-gradient(circle,
+        rgba(255,255,255,0.9),
+        rgba(255,160,240,0.4),
+        transparent
+    );
+
+    border-radius: 80% 20% 60% 40%;
+
+    transform-origin: right center;
+
+    animation: flapTopLeft 0.6s ease-in-out infinite;
+}
+
+.wing-left .wing-bottom {
+    width: 50px;
+    height: 35px;
+
+    margin-top: -10px;
+    margin-left: 5px;
+
+    background: radial-gradient(circle,
+        rgba(255,255,255,0.7),
+        rgba(255,120,200,0.3),
+        transparent
+    );
+
+    border-radius: 60% 40% 80% 20%;
+
+    transform-origin: right center;
+
+    animation: flapBottomLeft 0.6s ease-in-out infinite;
+}
+
+/* =========================
+RIGHT WING
+========================= */
+
+.wing-right {
+    left: 50%;
+    top: 12px;
+    transform: translateX(-10%);
+}
+
+.wing-right .wing-top {
+    width: 55px;
+    height: 40px;
+
+    background: radial-gradient(circle,
+        rgba(255,255,255,0.9),
+        rgba(180,200,255,0.4),
+        transparent
+    );
+
+    border-radius: 20% 80% 40% 60%;
+
+    transform-origin: left center;
+
+    animation: flapTopRight 0.6s ease-in-out infinite;
+}
+
+.wing-right .wing-bottom {
+    width: 50px;
+    height: 35px;
+
+    margin-top: -10px;
+    margin-left: -5px;
+
+    background: radial-gradient(circle,
+        rgba(255,255,255,0.7),
+        rgba(150,180,255,0.3),
+        transparent
+    );
+
+    border-radius: 40% 60% 20% 80%;
+
+    transform-origin: left center;
+
+    animation: flapBottomRight 0.6s ease-in-out infinite;
+}
+
+/* =========================
+FLAP ANIMATIONS (STABLE)
+========================= */
+
+@keyframes flapTopLeft {
+    0%,100% { transform: rotate(-25deg); }
+    50% { transform: rotate(-40deg); }
+}
+
+@keyframes flapBottomLeft {
+    0%,100% { transform: rotate(15deg); }
+    50% { transform: rotate(30deg); }
+}
+
+@keyframes flapTopRight {
+    0%,100% { transform: rotate(25deg); }
+    50% { transform: rotate(40deg); }
+}
+
+@keyframes flapBottomRight {
+    0%,100% { transform: rotate(-15deg); }
+    50% { transform: rotate(-30deg); }
+}
+
+/* =========================
+DUST EFFECT (OPTIMIZED)
+========================= */
+
+.dust {
+    position: absolute;
+
+    width: 6px;
+    height: 6px;
+
+    background: radial-gradient(circle, #fff8d6, #ffd700, transparent);
+
+    border-radius: 50%;
+
+    opacity: 0;
+
+    animation: dustFloat 1.2s ease-out infinite;
+}
+
+.dust::before,
+.dust::after {
+    content: '';
+
+    position: absolute;
+
+    width: 6px;
+    height: 6px;
+
+    background: radial-gradient(circle, #fff4b0, #ffcc33, transparent);
+
+    border-radius: 50%;
+
+    animation: dustFloat 1.5s ease-out infinite;
+}
+
+.dust::before {
+    left: -10px;
+    animation-delay: 0.2s;
+}
+
+.dust::after {
+    left: 10px;
+    animation-delay: 0.4s;
+}
+
+@keyframes dustFloat {
+    0% {
+        transform: translate(0,0) scale(1);
+        opacity: 0.9;
+    }
+
+    100% {
+        transform: translate(-20px,-30px) scale(0.3);
+        opacity: 0;
+    }
+}
+
+/* =========================
+FAIRY CHAT
+========================= */
+
+#fairyChat {
+    position: absolute;
+
+    left: 110px;
+    top: -10px;
+
+    max-width: 220px;
+
+    padding: 12px 16px;
+
+    background: rgba(255,255,255,0.15);
+
+    border-radius: 15px;
+
+    backdrop-filter: blur(10px);
+
+    color: #fff8d6;
+    font-size: 14px;
+    line-height: 1.4;
+
+    opacity: 0;
+
+    transform: translateY(10px);
+
+    transition: 0.5s ease;
+
+    pointer-events: none;
+}
+
+#fairyChat::after {
+    content: '';
+
+    position: absolute;
+
+    left: -8px;
+    top: 15px;
+
+    width: 12px;
+    height: 12px;
+
+    background: rgba(255,255,255,0.15);
+
+    transform: rotate(45deg);
+}
+
+/* =========================
+HINT
+========================= */
+
+#fairyHint {
+    position: absolute;
+
+    top: -60px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 14px;
+    color: #ffd7f0;
+
+    opacity: 0.85;
+
+    white-space: nowrap;
+
+    pointer-events: none;
+
+    transition: 1s ease;
+}
+
+/* =========================
+ENDING SCENE
+========================= */
+
+#fairyEndingScene {
+    min-height: 100vh;
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+    text-align: center;
+
+    padding: 40px 20px;
+}
+
+.ending-fairy-wrapper {
+    position: relative;
+
+    animation: fairyFloat 4s ease-in-out infinite;
+}
+
+.ending-fairy {
+    font-size: 5rem;
+
+    filter: drop-shadow(0 0 20px #ffd7f0);
+
+    animation: fairyGlow 3s ease-in-out infinite;
+}
+
+.ending-chat {
+    margin-top: 30px;
+
+    font-size: 1.2rem;
+
+    color: #fff8d6;
+
+    opacity: 0;
+
+    transform: translateY(20px);
+
+    transition: 2s ease;
+}
+
+.ending-chat.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================
+ENDING ANIMATIONS
+========================= */
+
+@keyframes fairyFloat {
+    50% { transform: translateY(-15px); }
+}
+
+@keyframes fairyGlow {
+    50% {
+        filter: drop-shadow(0 0 35px #fff4b0);
+    }
+}
+
+/* =========================
+FIREFLIES
+========================= */
+
+.firefly {
+    position: fixed;
+
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #fff6a8;
+
+    box-shadow:
+        0 0 10px #fff6a8,
+        0 0 20px #fff6a8;
+
+    animation: fireflyMove 8s linear infinite;
+}
+
+@keyframes fireflyMove {
+    50% {
+        transform:
+            translateY(-60px)
+            translateX(40px);
+    }
+}

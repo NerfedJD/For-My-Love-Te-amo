@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Her 🩷💙</title>
+
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/intro.css">
+<link rel="stylesheet" href="css/fairy.css">
+<link rel="stylesheet" href="css/flowers.css">
+<link rel="stylesheet" href="css/messages.css">
+<link rel="stylesheet" href="css/buttons.css">
+<link rel="stylesheet" href="css/letters.css">
+<link rel="stylesheet" href="css/gallery.css">
+<link rel="stylesheet" href="css/final.css">
+<link rel="stylesheet" href="css/effects.css">
+<link rel="stylesheet" href="css/responsive.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+
+
+<!-- Background -->
+<div id="stars"></div>
+<div id="waterRipple"></div>
+
+<div id="fireflies"></div>
+
+<!-- Moon -->
+<div class="moon"></div>
+
+<!-- Intro -->
+<section id="introScene" class="scene active">
+
+    <div class="intro-content">
+
+        <h1>For Her 🩷💙</h1>
+
+        <p>
+            This little page is just a reminder that you are appreciated,
+            special, and truly unforgettable.
+            <br>
+            Te amo Mami
+        </p>
+
+        <button id="startBtn">
+            ✨ Click Me ✨
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- Fairy -->
+<div id="fairyContainer">
+
+    <div id="fairyHint">
+        ✨ Click the fairy ✨
+    </div>
+
+    <div id="fairy">
+
+        <div class="wing wing-left">
+            <div class="wing-top"></div>
+            <div class="wing-bottom"></div>
+        </div>
+
+        <div class="fairy-body"></div>
+
+        <div class="wing wing-right">
+            <div class="wing-top"></div>
+            <div class="wing-bottom"></div>
+        </div>
+
+        <div class="dust"></div>
+        <div class="dust" style="animation-delay:.3s;"></div>
+        <div class="dust" style="animation-delay:.6s;"></div>
+
+    </div>
+
+    <div id="fairyChat"></div>
+
+</div>
+
+<!-- =========================
+REALISTIC FLOWER SCENE
+========================= -->
+
+<section id="flowerScene">
+
+    <div class="flower-wrapper">
+
+        <svg
+            class="real-flower"
+            viewBox="0 0 400 700"
+        >
+
+            <!-- GLOW -->
+
+            <defs>
+
+                <radialGradient
+                    id="petalGradient"
+                    cx="50%"
+                    cy="50%"
+                    r="50%"
+                >
+
+                    <stop
+                        offset="0%"
+                        stop-color="#ffd6ea"
+                    />
+
+                    <stop
+                        offset="60%"
+                        stop-color="#ff5fa2"
+                    />
+
+                    <stop
+                        offset="100%"
+                        stop-color="#ff1f75"
+                    />
+
+                </radialGradient>
+
+                <linearGradient
+                    id="stemGradient"
+                    x1="0%"
+                    y1="0%"
+                    x2="0%"
+                    y2="100%"
+                >
+
+                    <stop
+                        offset="0%"
+                        stop-color="#66ff99"
+                    />
+
+                    <stop
+                        offset="100%"
+                        stop-color="#1f9b4f"
+                    />
+
+                </linearGradient>
+
+            </defs>
+
+            <!-- STEM -->
+
+            <path
+                class="stem"
+                d="
+                M200 700
+                C195 550 210 400 200 250
+                "
+            />
+
+            <!-- LEAF LEFT -->
+
+            <path
+                class="leaf leaf-left"
+                d="
+                M190 450
+                C90 390 80 310 180 350
+                C200 390 205 420 190 450
+                "
+            />
+
+            <!-- LEAF RIGHT -->
+
+            <path
+                class="leaf leaf-right"
+                d="
+                M210 350
+                C320 280 330 180 230 240
+                C205 270 200 310 210 350
+                "
+            />
+
+            <!-- FLOWER -->
+
+            <g class="flower-head">
+
+                <!-- PETALS -->
+
+                <ellipse
+                    class="petal p1"
+                    cx="200"
+                    cy="180"
+                    rx="45"
+                    ry="100"
+                />
+
+                <ellipse
+                    class="petal p2"
+                    cx="200"
+                    cy="180"
+                    rx="45"
+                    ry="100"
+                    transform="
+                    rotate(45 200 180)
+                    "
+                />
+
+                <ellipse
+                    class="petal p3"
+                    cx="200"
+                    cy="180"
+                    rx="45"
+                    ry="100"
+                    transform="
+                    rotate(90 200 180)
+                    "
+                />
+
+                <ellipse
+                    class="petal p4"
+                    cx="200"
+                    cy="180"
+                    rx="45"
+                    ry="100"
+                    transform="
+                    rotate(135 200 180)
+                    "
+                />
+
+                <ellipse
+                    class="petal p5"
+                    cx="200"
+                    cy="180"
+                    rx="35"
+                    ry="80"
+                    transform="
+                    rotate(22 200 180)
+                    "
+                />
+
+                <ellipse
+                    class="petal p6"
+                    cx="200"
+                    cy="180"
+                    rx="35"
+                    ry="80"
+                    transform="
+                    rotate(-22 200 180)
+                    "
+                />
+
+                <!-- CENTER -->
+
+                <circle
+                    class="flower-center"
+                    cx="200"
+                    cy="180"
+                    r="28"
+                />
+
+            </g>
+
+        </svg>
+
+    </div>
+
+</section>
+
+
+<!-- LOVE MESSAGE -->
+<section id="messageSection">
+
+    <div class="message-box">
+
+        <h2> Message 💌</h2>
+
+        <p id="typewriter"></p>
+
+    </div>
+
+</section>
+
+<!-- SECOND MESSAGE -->
+<section id="secondMessageSection">
+
+    <div class="message-box second-box">
+
+        <h2>Message 💌</h2>
+
+        <p id="secondTypewriter"></p>
+
+    </div>
+
+</section>
+
+<!-- BUTTONS -->
+<section id="buttonsSection">
+
+    <button class="magic-btn" id="lettersBtn">
+        💌 Secret Letters
+    </button>
+
+    <button class="magic-btn" id="galleryBtn">
+        📸 Memories
+    </button>
+
+    <button class="magic-btn" id="finalBtn">
+        🌙 One More Thing...
+    </button>
+
+</section>
+
+
+<!-- Letters -->
+
+<section id="lettersSection">
+
+
+<div class="letter-slider">
+
+    <div class="letter-card active">
+        <p>
+            Im sorry for everything. 😔😔
+        </p>
+    </div>
+
+    <div class="letter-card">
+        <p>
+            I miss you a lot. 😔😔
+        </p>
+    </div>
+    
+    <div class="letter-card">
+    <p>
+        Imma bite you so hard. 😝😝
+    </p>
+</div>
+
+<div class="letter-card">
+    <p>
+      Cutie Cutie Cutie. 🩷
+    </p>
+</div>
+
+<div class="letter-card">
+    <p>
+        Call me. 💙
+    </p>
+</div>
+
+
+    <div class="letter-card">
+        <p>
+            I will always choose you. 🩷💙
+        </p>
+    </div>
+
+</div>
+
+
+</section>
+
+
+<!-- GALLERY -->
+<section id="gallerySection">
+
+    <h2>Manaia's Gallery</h2>
+
+    <div class="gallery">
+
+       <div class="photo-card">
+          <img src="assets/gifs/gif1.gif">
+        </div>
+
+        <div class="photo-card">
+           <img src="assets/gifs/gif2.gif">
+        </div>
+
+        <div class="photo-card">
+           <img src="assets/gifs/gif3.gif">
+        </div>
+
+        <div class="photo-card">
+           <img src="assets/gifs/gif4.gif">
+        </div>
+
+        <div class="photo-card">
+           <img src="assets/gifs/gif5.gif">
+        </div>
+
+        <div class="photo-card">
+          <img src="assets/gifs/gif6.gif">
+        </div>
+
+        <div class="photo-card">
+           <img src="assets/gifs/gif7.gif">
+        </div>
+
+
+    </div>
+
+</section>
+
+<!-- FINAL -->
+<section id="finalSection">
+
+   <div class="final-message">
+
+    <div class="final-box">
+
+        <h1>Manaia</h1>
+
+        <p id="finalText1"></p>
+
+        <p id="finalText2"></p>
+
+        <h2 id="finalSignature"></h2>
+
+    </div>
+
+</div>
+
+    <div class="heart-container">
+
+        <div class="big-heart">
+            🩷💙
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Fairy Ending Scene -->
+<section id="fairyEndingScene">
+
+    <div class="ending-stars"></div>
+
+    <div class="ending-fairy-wrapper">
+        <div class="ending-fairy">🧚</div>
+    </div>
+
+    <!-- ADD THIS -->
+    <div class="thanks-for-watching">
+        Thank you for watching Mami <br>
+        Te amo always and forever <br>🩷💙
+    </div>
+
+</section>
+<div id="heartContainer"></div>
+
+<!-- MUSIC -->
+<audio id="bgMusic" loop>
+<source src="assets/music/music.mp3">
+
+<script src="js/main.js"></script>
+<script src="js/stars.js"></script>
+<script src="js/fairy.js"></script>
+<script src="js/flowers.js"></script>
+<script src="js/messages.js"></script>
+<script src="js/letters.js"></script>
+<script src="js/gallery.js"></script>
+<script src="js/final.js"></script>
+<script src="js/effects.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+/* =========================
+INTRO SCENE
+========================= */
+
+.scene {
+    height: 100vh;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 0;
+    overflow: hidden;
+
+    box-sizing: border-box;
+}
+
+/* =========================
+CONTENT WRAPPER
+========================= */
+.intro-content {
+    animation: fadeIn 2s ease;
+
+    width: 100%;
+    max-width: 900px;
+
+    padding: 30px;
+
+    box-sizing: border-box;
+}
+
+/* =========================
+TITLE
+========================= */
+
+.intro-content h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 5rem;
+
+    color: #ffd7f0;
+
+    margin-bottom: 20px;
+}
+
+/* =========================
+TEXT
+========================= */
+
+.intro-content p {
+    font-size: 1.2rem;
+
+    margin-bottom: 30px;
+
+    line-height: 1.8;
+}
+
+/* =========================
+START BUTTON
+========================= */
+
+#startBtn {
+    padding: 18px 40px;
+
+    border: none;
+    border-radius: 50px;
+
+    background: linear-gradient(45deg, #ff7fd5, #c58fff);
+
+    color: white;
+    font-size: 1.1rem;
+
+    cursor: pointer;
+
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    will-change: transform;
+}
+
+/* HOVER EFFECT */
+#startBtn:hover {
+    transform: scale(1.08);
+
+    box-shadow:
+        0 0 20px #ff9edc,
+        0 0 40px #ff9edc;
+}
+
+/* ACTIVE CLICK FEEDBACK */
+#startBtn:active {
+    transform: scale(0.98);
+}

@@ -1,0 +1,68 @@
+/* =========================
+MESSAGE SECTIONS
+========================= */
+
+#messageSection,
+#secondMessageSection {
+    display: none;
+    width: 100%;
+    /*display: flex;*/
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+
+    padding: 80px 20px;
+
+    animation: fadeIn 1.5s ease;
+}
+
+/* =========================
+MESSAGE BOX
+========================= */
+
+.message-box {
+    max-width: 800px;
+
+    margin: auto;
+
+    background: rgba(255,255,255,0.08);
+
+    backdrop-filter: blur(10px);
+
+    border-radius: 30px;
+
+    padding: 40px;
+
+    text-align: center;
+}
+
+/* =========================
+SECOND MESSAGE SPECIAL STYLE
+========================= */
+
+.second-box {
+    border: 1px solid rgba(255,255,255,0.15);
+
+    box-shadow: 0 0 20px rgba(255,182,220,0.2);
+}
+
+/* =========================
+TITLE
+========================= */
+
+.message-box h2 {
+    margin-bottom: 20px;
+
+    color: #ffd7f0;
+}
+
+/* =========================
+TYPEWRITER TEXT
+========================= */
+
+#typewriter,
+#secondTypewriter {
+    font-size: 1.1rem;
+    line-height: 1.9;
+}

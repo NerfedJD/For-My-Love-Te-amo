@@ -1,0 +1,153 @@
+/* =========================
+MOBILE (CLEAN + STABLE)
+========================= */
+
+@media (max-width: 768px) {
+
+  html,
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    font-size: 14px;
+  }
+
+  /* =========================
+  INTRO
+  ========================= */
+
+  .intro-content h1 {
+    font-size: 2.5rem;
+    padding: 0 10px;
+  }
+
+  .intro-content p {
+    font-size: 1rem;
+    padding: 0 15px;
+  }
+
+  /* =========================
+  BUTTONS
+  ========================= */
+
+  .magic-btn {
+    width: 95%;
+    margin: 10px auto;
+    font-size: 1rem;
+  }
+
+  /* =========================
+  FAIRY POSITION FIX
+  ========================= */
+
+  #fairyContainer {
+    position: fixed;
+    top: 45%;
+    left: -200px;
+    transform: none;
+  }
+
+  /* =========================
+  MESSAGE SECTION (FIXED)
+  ========================= */
+
+  #messageSection,
+  #secondMessageSection {
+    width: 100%;
+    display: none; /* JS controls visibility */
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 80px 15px;
+  }
+
+  .message-box {
+    width: min(800px, 95%);
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  /* =========================
+  TEXT INSIDE MESSAGE
+  ========================= */
+
+  #typewriter,
+  #secondTypewriter {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  /* =========================
+  LETTERS
+  ========================= */
+
+  .letter-card {
+    padding: 20px;
+    font-size: 1rem;
+  }
+
+  /* =========================
+  GALLERY
+  ========================= */
+
+  .gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .photo-card {
+    width: 90%;
+  }
+
+  /* =========================
+  FINAL SCREEN
+  ========================= */
+
+  .final-message h1 {
+    font-size: 2.5rem;
+  }
+
+  .big-heart {
+    font-size: 3.5rem;
+  }
+
+  /* =========================
+  MOON
+  ========================= */
+
+  .moon {
+    width: 90px;
+    height: 90px;
+    top: 20px;
+    right: 20px;
+  }
+
+  /* =========================
+  FLOWER
+  ========================= */
+
+  .real-flower {
+    width: 250px;
+  }
+
+  /* =========================
+  SMALL UI
+  ========================= */
+
+  #scrollHint {
+    font-size: 12px;
+  }
+
+  /* =========================
+  SAFETY FIXES
+  ========================= */
+
+  #sparkleContainer,
+  #waterRipple {
+    overflow: hidden;
+  }
+}
