@@ -113,8 +113,11 @@ function runFinalSequence() {
                 }
 
             }, 2000); // Wait before thanks appears 
-
-        }, 2000); // Wait before scroll 
+            
+            setTimeout(() => {
+    document.documentElement.style.scrollBehavior = "auto";
+}, 6000);
+        }, 3200); // Wait before scroll 
 
     });
 }
