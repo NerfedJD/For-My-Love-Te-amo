@@ -3,51 +3,56 @@ FLOWER SCENE
 ========================= */
 
 #flowerScene {
-
     display: none;
 
     min-height: 100vh;
 
+    display: flex;
     justify-content: center;
     align-items: flex-end;
 
     position: relative;
-
     overflow: hidden;
 
     padding-bottom: 40px;
 
     opacity: 0;
     transition: opacity 0.8s ease;
+
+    will-change: opacity;
 }
 
 /* CENTER MODE */
-
 #flowerScene.center {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transform: none; /* ❌ remove transform hack (causes blur/jitter) */
 }
 
 /* WRAPPER */
-
 .flower-wrapper {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: flex-end;
+
+    will-change: transform;
 }
 
 /* SVG */
-
 .real-flower {
-    width: 320px;
+    width: 300px;
+
     overflow: visible;
 
-    filter: drop-shadow(0 0 25px rgba(255,120,180,.25));
+    filter: drop-shadow(0 0 18px rgba(255,120,180,.25));
 
-    animation: flowerFloat 5s ease-in-out infinite;
+    animation: flowerFloat 6s ease-in-out infinite;
+    will-change: transform;
 }
 
 /* =========================
@@ -55,7 +60,6 @@ STEM
 ========================= */
 
 .stem {
-
     fill: none;
     stroke: url(#stemGradient);
     stroke-width: 10;
@@ -80,27 +84,24 @@ LEAVES
     opacity: 0;
 
     transform-origin: center;
-
-    filter: drop-shadow(0 0 10px rgba(100,255,140,.3));
+    filter: drop-shadow(0 0 8px rgba(100,255,140,.25));
 }
 
 .leaf.grow {
-    animation: leafGrow 2s ease forwards;
+    animation: leafGrow 2.5s ease forwards;
 }
-
-/* LEFT / RIGHT timing handled in JS OR SVG order */
 
 /* =========================
 FLOWER HEAD
 ========================= */
 
 .flower-head {
-
     opacity: 0;
 
-    transform: translateY(100px) scale(.2) rotate(-25deg);
-
+    transform: translateY(80px) scale(.25) rotate(-20deg);
     transform-origin: center;
+
+    will-change: transform, opacity;
 }
 
 .flower-head.bloom {
@@ -114,9 +115,9 @@ PETALS
 .petal {
     fill: url(#petalGradient);
     stroke: #ff9dc6;
-    stroke-width: 2;
+    stroke-width: 1.5;
 
-    filter: drop-shadow(0 0 15px rgba(255,120,180,.45));
+    filter: drop-shadow(0 0 10px rgba(255,120,180,.35));
 }
 
 /* =========================
@@ -125,11 +126,11 @@ CENTER
 
 .flower-center {
     fill: #ffe27a;
-    filter: drop-shadow(0 0 15px gold);
+    filter: drop-shadow(0 0 12px gold);
 }
 
 /* =========================
-ANIMATIONS
+ANIMATIONS (OPTIMIZED)
 ========================= */
 
 @keyframes stemGrow {
@@ -139,7 +140,7 @@ ANIMATIONS
 @keyframes leafGrow {
     from {
         opacity: 0;
-        transform: scale(0) rotate(-25deg);
+        transform: scale(0.5) rotate(-15deg);
     }
     to {
         opacity: 1;
@@ -150,12 +151,12 @@ ANIMATIONS
 @keyframes flowerBloom {
     0% {
         opacity: 0;
-        transform: translateY(100px) scale(.2) rotate(-25deg);
+        transform: translateY(80px) scale(.25) rotate(-20deg);
     }
 
     50% {
         opacity: 1;
-        transform: translateY(-20px) scale(1.08) rotate(5deg);
+        transform: translateY(-10px) scale(1.05) rotate(4deg);
     }
 
     100% {
@@ -165,7 +166,6 @@ ANIMATIONS
 }
 
 @keyframes flowerFloat {
-    50% {
-        transform: translateY(-10px) rotate(1deg);
-    }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
     }
