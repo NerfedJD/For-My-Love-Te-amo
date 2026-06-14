@@ -18,14 +18,19 @@ MOBILE (CLEAN + STABLE)
   INTRO
   ========================= */
 
-  .intro-content h1 {
-    font-size: 2.5rem;
+  .intro-content {
+    text-align: center;
     padding: 0 10px;
+  }
+
+  .intro-content h1 {
+    font-size: 2.4rem;
+    line-height: 1.2;
   }
 
   .intro-content p {
     font-size: 1rem;
-    padding: 0 15px;
+    margin-top: 10px;
   }
 
   /* =========================
@@ -34,41 +39,50 @@ MOBILE (CLEAN + STABLE)
 
   .magic-btn {
     width: 95%;
-    margin: 10px auto;
+    margin: 12px auto;
     font-size: 1rem;
+    display: block;
   }
 
   /* =========================
-  FAIRY POSITION FIX
+  FAIRY (STABLE POSITION)
   ========================= */
 
   #fairyContainer {
     position: fixed;
-    top: 45%;
-    left: -200px;
-    transform: none;
+    top: 50%;
+    left: -180px;
+    transform: translateY(-50%);
   }
 
   /* =========================
-  MESSAGE SECTION (FIXED)
+  MESSAGE SECTION (CRITICAL FIX)
   ========================= */
 
   #messageSection,
   #secondMessageSection {
     width: 100%;
-    display: none; /* JS controls visibility */
+    display: none; /* JS controls */
+    
+    /* 🔥 FIX: prevent weird scroll bugs */
+    position: relative;
+
     justify-content: center;
     align-items: center;
-    box-sizing: border-box;
+
     padding: 80px 15px;
+    box-sizing: border-box;
   }
 
   .message-box {
-    width: min(800px, 95%);
+    width: 100%;
+    max-width: 600px;
+
     margin: 0 auto;
-    box-sizing: border-box;
+
     padding: 20px;
-    border-radius: 20px;
+
+    border-radius: 18px;
   }
 
   /* =========================
@@ -85,45 +99,56 @@ MOBILE (CLEAN + STABLE)
   LETTERS
   ========================= */
 
+  .letter-slider {
+    height: auto;
+  }
+
   .letter-card {
-    padding: 20px;
+    padding: 18px;
     font-size: 1rem;
   }
 
   /* =========================
-  GALLERY
+  GALLERY (SMOOTH STACK)
   ========================= */
 
   .gallery {
+    display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 16px;
   }
 
   .photo-card {
-    width: 90%;
+    width: 92%;
   }
 
   /* =========================
   FINAL SCREEN
   ========================= */
 
+  .final-message {
+    text-align: center;
+    padding: 0 15px;
+  }
+
   .final-message h1 {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
   }
 
   .big-heart {
-    font-size: 3.5rem;
+    font-size: 3.2rem;
   }
 
   /* =========================
-  MOON
+  MOON (LIGHTER)
   ========================= */
 
   .moon {
-    width: 90px;
-    height: 90px;
-    top: 20px;
-    right: 20px;
+    width: 85px;
+    height: 85px;
+    top: 15px;
+    right: 15px;
   }
 
   /* =========================
@@ -131,7 +156,7 @@ MOBILE (CLEAN + STABLE)
   ========================= */
 
   .real-flower {
-    width: 250px;
+    width: 230px;
   }
 
   /* =========================
@@ -140,14 +165,22 @@ MOBILE (CLEAN + STABLE)
 
   #scrollHint {
     font-size: 12px;
+    text-align: center;
   }
 
   /* =========================
-  SAFETY FIXES
+  PERFORMANCE FIXES 🔥
   ========================= */
 
   #sparkleContainer,
   #waterRipple {
     overflow: hidden;
   }
-}
+
+  /* 🔥 Prevent lag on mobile animations */
+  .star,
+  .firefly {
+    will-change: transform, opacity;
+  }
+
+    }
