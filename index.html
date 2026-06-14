@@ -452,9 +452,11 @@ REALISTIC FLOWER SCENE
 <div id="heartContainer"></div>
 
 <!-- MUSIC -->
-<audio id="bgMusic" loop>
-<source src="assets/music/music.mp3">
-
+<audio id="bgMusic" preload="auto" loop>
+    <source src="assets/music/music.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+    
 <script src="js/main.js"></script>
 <script src="js/stars.js"></script>
 <script src="js/fairy.js"></script>
