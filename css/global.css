@@ -19,17 +19,21 @@ body{
 body{
     font-family:'Poppins',sans-serif;
     min-height:100vh;
+
     overflow-x:hidden;
     overflow-y:auto;
+
     position:relative;
     color:white;
 
-    /* ✅ SAFE BACKGROUND (ALWAYS WORKS) */
+    /* ✅ BACKGROUND */
     background-image:url("../assets/images/background.png");
     background-repeat:no-repeat;
     background-position:center top;
     background-size:cover;
-    background-attachment:fixed; /* important for stability */
+
+    /* ❌ REMOVE THIS (causes lag on iPad/mobile) */
+    /* background-attachment:fixed; */
 
     -webkit-tap-highlight-color:transparent;
     -webkit-overflow-scrolling:touch;
@@ -77,8 +81,11 @@ STARS
     height:2px;
     border-radius:50%;
     background:white;
+
     opacity:0.9;
-    animation:twinkle 3s infinite ease-in-out;
+
+    /* ✅ slightly slower = smoother */
+    animation:twinkle 4s infinite ease-in-out;
 }
 
 @keyframes twinkle{
@@ -137,11 +144,18 @@ MOON
     position:fixed;
     top:50px;
     right:60px;
+
     width:140px;
     height:140px;
+
     border-radius:50%;
     background:#fff8d6;
-    box-shadow:0 0 20px #fff4b0, 0 0 40px #fff4b0, 0 0 80px #fff4b0;
+
+    box-shadow:
+        0 0 20px #fff4b0,
+        0 0 40px #fff4b0,
+        0 0 80px #fff4b0;
+
     z-index:0;
 }
 
@@ -152,4 +166,14 @@ ANIMATIONS
 @keyframes fadeIn{
     from{ opacity:0; transform:scale(.96); }
     to{ opacity:1; transform:scale(1); }
+}
+
+/* =========================
+MOBILE/TABLET PERFORMANCE FIX
+========================= */
+
+@media (max-width: 1024px){
+    #waterRipple{
+        display:none; /* 🔥 reduces lag + fixes audio issues */
+    }
     }
