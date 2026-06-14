@@ -398,20 +398,15 @@ FIREFLIES
 
 .firefly {
     position: fixed;
-
-    width: 8px;
-    height: 8px;
-
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
-
     background: #fff6a8;
+    box-shadow: 0 0 10px #fff6a8;
 
-    box-shadow:
-        0 0 10px #fff6a8,
-        0 0 20px #fff6a8;
-
-    animation: fireflyMove 8s linear infinite;
-}
+    animation: fireflyMove 10s linear infinite;
+    will-change: transform;
+    }
 
 @keyframes fireflyMove {
     50% {
