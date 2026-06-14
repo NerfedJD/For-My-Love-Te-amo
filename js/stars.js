@@ -1,26 +1,38 @@
 /* ==========================
-   STARS
+   STARS (FIXED)
 ========================== */
 
-const starsContainer = document.getElementById("stars");
+document.addEventListener("DOMContentLoaded", () => {
 
-if (starsContainer) {
+    const starsContainer = document.getElementById("stars");
 
-    for (let i = 0; i < 200; i++) {
+    if (!starsContainer) {
+        console.error("❌ #stars container not found");
+        return;
+    }
+
+    // Clear any duplicates
+    starsContainer.innerHTML = "";
+
+    for (let i = 0; i < 150; i++) {
 
         const star = document.createElement("div");
-
-        star.classList.add("star");
+        star.className = "star";
 
         star.style.left = Math.random() * 100 + "%";
         star.style.top = Math.random() * 100 + "%";
 
         star.style.animationDuration =
-            (Math.random() * 4 + 2) + "s";
+            (Math.random() * 3 + 2) + "s";
+
+        star.style.animationDelay =
+            Math.random() * 3 + "s";
 
         starsContainer.appendChild(star);
     }
-}
+
+    console.log("⭐ Stars generated");
+});
 
 
 /* ==========================
@@ -43,4 +55,4 @@ for (let i = 0; i < 25; i++) {
         (Math.random() * 8 + 6) + "s";
 
     document.body.appendChild(firefly);
-}
+       }
