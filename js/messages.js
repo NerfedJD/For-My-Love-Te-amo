@@ -4,6 +4,9 @@
 
 function showMessage(){
 
+    // ✅ ENABLE smooth scrolling ONLY here
+    document.documentElement.style.scrollBehavior = "smooth";
+
     fairyContainer.style.opacity = "0";
     fairyContainer.style.pointerEvents = "none";
 
