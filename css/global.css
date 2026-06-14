@@ -125,99 +125,103 @@ STARS
     }
 
 /* =========================
-WATER RIPPLE
+WATER RIPPLE (DESKTOP ONLY)
 ========================= */
 
-#waterRipple{
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    z-index:0;
+#waterRipple {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
 }
 
 #waterRipple::before,
-#waterRipple::after{
-    content:"";
-    position:absolute;
-    border-radius:50%;
-    border:1.5px solid rgba(255,255,255,.15);
-    opacity:0;
-    filter:blur(.5px);
+#waterRipple::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    border: 1.5px solid rgba(255,255,255,.15);
+    opacity: 0;
+    filter: blur(0.5px);
+    will-change: transform, opacity;
 }
 
-#waterRipple::before{
-    left:50%;
-    top:75%;
-    width:80px;
-    height:80px;
-    animation:rippleReal 5s linear infinite;
+#waterRipple::before {
+    left: 50%;
+    top: 75%;
+    width: 80px;
+    height: 80px;
+    animation: rippleReal 5s linear infinite;
 }
 
-#waterRipple::after{
-    left:62%;
-    top:82%;
-    width:50px;
-    height:50px;
-    animation:rippleReal 6s linear infinite 2s;
+#waterRipple::after {
+    left: 62%;
+    top: 82%;
+    width: 50px;
+    height: 50px;
+    animation: rippleReal 6s linear infinite 2s;
 }
 
-@keyframes rippleReal{
-    0%{
-        transform:translate(-50%, -50%) scale(0);
-        opacity:0;
+@keyframes rippleReal {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
     }
-    10%{ opacity:.8; }
-    100%{
-        transform:translate(-50%, -50%) scale(8);
-        opacity:0;
-    }
-}
-
-/* =========================
-MOON
-========================= */
-
-.moon{
-    position:fixed;
-    top:50px;
-    right:60px;
-
-    width:140px;
-    height:140px;
-
-    border-radius:50%;
-
-    background:#fff8d6;
-
-    box-shadow:
-        0 0 20px #fff4b0,
-        0 0 40px #fff4b0,
-        0 0 80px #fff4b0;
-
-    z-index:0;
-}
-
-/* =========================
-ANIMATIONS
-========================= */
-
-@keyframes fadeIn{
-    from{
-        opacity:0;
-        transform:scale(.96);
-    }
-    to{
-        opacity:1;
-        transform:scale(1);
+    10% { opacity: .8; }
+    100% {
+        transform: translate(-50%, -50%) scale(8);
+        opacity: 0;
     }
 }
 
 /* =========================
-PERFORMANCE FIX (MOBILE/TABLET)
+MOON (OPTIMIZED)
 ========================= */
 
-@media (max-width:1024px){
-    #waterRipple{
-        display:none; /* 🔥 prevents lag + audio issues */
+.moon {
+    position: fixed;
+    top: 50px;
+    right: 60px;
+
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+
+    background: #fff8d6;
+
+    /* ❌ heavy multi-shadow removed */
+    box-shadow: 0 0 25px #fff4b0;
+
+    z-index: 0;
+
+    will-change: transform;
+}
+
+/* =========================
+FADE ANIMATION
+========================= */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(.96);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* =========================
+MOBILE / TABLET PERFORMANCE FIX
+========================= */
+
+@media (max-width: 1024px) {
+    #waterRipple {
+        display: none;
+    }
+
+    .moon {
+        box-shadow: 0 0 15px #fff4b0;
     }
 }
