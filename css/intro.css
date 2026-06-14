@@ -12,28 +12,24 @@ INTRO SCENE
 
     text-align: center;
 
+    padding: 0;
     overflow: hidden;
-    box-sizing: border-box;
 
-    /* 🔥 prevents mobile viewport jump */
-    width: 100%;
+    box-sizing: border-box;
 }
 
 /* =========================
 CONTENT WRAPPER
 ========================= */
-
 .intro-content {
-    animation: fadeIn 1.6s ease;
+    animation: fadeIn 2s ease;
 
     width: 100%;
     max-width: 900px;
 
     padding: 30px;
-    box-sizing: border-box;
 
-    /* 🔥 performance hint */
-    will-change: opacity, transform;
+    box-sizing: border-box;
 }
 
 /* =========================
@@ -42,15 +38,11 @@ TITLE
 
 .intro-content h1 {
     font-family: 'Great Vibes', cursive;
-
-    font-size: clamp(2.8rem, 6vw, 5rem);
+    font-size: 5rem;
 
     color: #ffd7f0;
 
     margin-bottom: 20px;
-
-    /* 🔥 prevents text flicker on load */
-    transform: translateZ(0);
 }
 
 /* =========================
@@ -58,10 +50,11 @@ TEXT
 ========================= */
 
 .intro-content p {
-    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    font-size: 1.2rem;
 
     margin-bottom: 30px;
-    line-height: 1.7;
+
+    line-height: 1.8;
 }
 
 /* =========================
@@ -81,36 +74,20 @@ START BUTTON
 
     cursor: pointer;
 
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
     will-change: transform;
 }
 
 /* HOVER EFFECT */
 #startBtn:hover {
-    transform: scale(1.05);
+    transform: scale(1.08);
 
     box-shadow:
-        0 0 15px #ff9edc,
-        0 0 30px #ff9edc;
+        0 0 20px #ff9edc,
+        0 0 40px #ff9edc;
 }
 
 /* ACTIVE CLICK FEEDBACK */
 #startBtn:active {
     transform: scale(0.98);
-}
-
-/* =========================
-FADE ANIMATION
-========================= */
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0.98);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
 }
