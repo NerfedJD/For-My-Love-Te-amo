@@ -53,4 +53,4 @@ ACTIVE / CLICK FEEDBACK (optional but useful)
 
 .magic-btn:active {
     transform: translateY(-2px) scale(0.98);
-    }
+}
