@@ -269,7 +269,7 @@ FAIRY CHAT
 
     border-radius: 15px;
 
-    backdrop-filter: blur(6px);
+    backdrop-filter: blur(10px);
 
     color: #fff8d6;
     font-size: 14px;
@@ -398,15 +398,20 @@ FIREFLIES
 
 .firefly {
     position: fixed;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: #fff6a8;
-    box-shadow: 0 0 10px #fff6a8;
 
-    animation: fireflyMove 10s linear infinite;
-    will-change: transform;
-    }
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #fff6a8;
+
+    box-shadow:
+        0 0 10px #fff6a8,
+        0 0 20px #fff6a8;
+
+    animation: fireflyMove 8s linear infinite;
+}
 
 @keyframes fireflyMove {
     50% {
@@ -414,4 +419,4 @@ FIREFLIES
             translateY(-60px)
             translateX(40px);
     }
-}
+    }
